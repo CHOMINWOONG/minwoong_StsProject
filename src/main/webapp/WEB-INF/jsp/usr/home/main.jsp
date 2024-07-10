@@ -7,6 +7,20 @@
 
 <%@ include file="../../common/head.jsp" %>
 
+	<script>
+		async function getData() {
+			const API_KEY = 
+			const url = 
+			
+			const response = await fetch(url);
+			const data = await response.json();
+			console.log(data);
+			
+			$('#apiTest').html(data.response.body.items.item[0].title);
+		}
+		
+	getData();
+	</script>
 	<section class="mt-8">
 		<div class="container mx-auto">
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
