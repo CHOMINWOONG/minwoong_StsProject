@@ -19,29 +19,34 @@
 	    <div class="center-container">
 	        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 	            <!-- 제목을 가운데 정렬하고 스타일을 적용 -->
-	            <h1 class="text-2xl font-bold mb-6 text-center">기초대사량 계산기</h1>
+	            <h1 class="text-2xl font-bold mb-10 text-center">기초대사량 계산기</h1>
 	            
 	            <!-- 폼 시작 -->
 	            <form id="bmrForm">
 	                <!-- 성별 입력 필드 -->
 	                <div class="mb-4 flex justify-between items-center">
-	                    <label for="gender" class="block text-gray-700">성별 (남/여):</label>
-	                    <input type="text" id="gender" name="gender" class="w-1/2 px-3 py-2 border rounded-lg" required>
+	                     <label for="gender" class="block text-gray-700">성별:</label>
+	                    <select id="gender" name="gender" class="select select-success w-9/12 max-w-xs" required>
+	                        <option disabled selected>성별을 선택해주세요</option>
+	                        <option value="남">남</option>
+	                        <option value="여">여</option>
+	                    </select>
 	                </div>
 	                <!-- 나이 입력 필드 -->
 	                <div class="mb-4 flex justify-between items-center">
 	                    <label for="age" class="block text-gray-700">나이:</label>
-	                    <input type="number" id="age" name="age" class="w-1/2 px-3 py-2 border rounded-lg" required>
+	                    <input type="number" id="age" name="age" placeholder="나이를 입력해주세요" class="input input-bordered input-success w-9/12 max-w-xs" required/>
+	                    
 	                </div>
 	                <!-- 체중 입력 필드 -->
 	                <div class="mb-4 flex justify-between items-center">
 	                    <label for="weight" class="block text-gray-700">체중 (kg):</label>
-	                    <input type="number" id="weight" name="weight" step="0.1" class="w-1/2 px-3 py-2 border rounded-lg" required>
+	                    <input type="number" id="weight" name="weight" step="0.1" placeholder="체중을 입력해주세요" class="input input-bordered input-success w-9/12 max-w-xs" required/>
 	                </div>
 	                <!-- 키 입력 필드 -->
 	                <div class="mb-4 flex justify-between items-center">
 	                    <label for="height" class="block text-gray-700">키 (cm):</label>
-	                    <input type="number" id="height" name="height" step="0.1" class="w-1/2 px-3 py-2 border rounded-lg" required>
+	                    <input type="number" id="height" name="height" step="0.1" placeholder="키를 입력해주세요" class="input input-bordered input-success w-9/12 max-w-xs" required/>
 	                </div>
 	                <!-- 제출 버튼 -->
 	                <div>
