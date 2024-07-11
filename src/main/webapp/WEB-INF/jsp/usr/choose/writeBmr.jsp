@@ -9,6 +9,7 @@
 <html lang="ko">
 	
 	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 	<head>
 	    <title>기초대사량 계산기</title>
@@ -21,7 +22,7 @@
 	            <h1 class="text-2xl font-bold mb-6 text-center">기초대사량 계산기</h1>
 	            
 	            <!-- 폼 시작 -->
-	            <form action="/usr/choose/calculateBmr" method="post">
+	            <form id="bmrForm">
 	                <!-- 성별 입력 필드 -->
 	                <div class="mb-4 flex justify-between items-center">
 	                    <label for="gender" class="block text-gray-700">성별 (남/여):</label>
@@ -48,19 +49,44 @@
 	                </div>
 	            </form>
 	            <!-- BMR 결과 표시 -->
-	            <c:if test="${not empty bmr}">
-	                <div class="mt-6 p-4 bg-green-100 rounded-lg text-center">
-	                    <h2 class="text-xl font-bold mb-2">기초대사량 결과</h2>
-	                    <p>기초대사량은 <strong>${bmr}</strong> kcal입니다.</p>
-	                </div>
-	            </c:if>
+	            <div id="result" class="mt-6 p-4 bg-green-100 rounded-lg text-center hidden">
+	                <h2 class="text-xl font-bold mb-2">기초대사량 결과</h2>
+	                <p>기초대사량은 <strong id="bmrValue"></strong> kcal입니다.</p>
+	            </div>
 	        </div>
 	    </div>
+	    <script>
+	        document.getElementById('bmrForm').addEventListener('submit', function(event) {
+	            event.preventDefault();
+	
+	            const gender = document.getElementById('gender').value;
+	            const age = document.getElementById('age').value;
+	            const weight = document.getElementById('weight').value;
+	            const height = document.getElementById('height').value;
+	
+	            const data = {
+	                gender: gender,
+	                age: age,
+	                weight: weight,
+	                height: height
+	            };
+	
+	            fetch('/api/calculateBmr', {
+	                method: 'POST',
+	                headers: {
+	                    'Content-Type': 'application/json'
+	                },
+	                body: JSON.stringify(data)
+	            })
+	            .then(response => response.json())
+	            .then(data => {
+	                document.getElementById('bmrValue').innerText = data.bmr;
+	                document.getElementById('result').classList.remove('hidden');
+	            })
+	            .catch(error => console.error('Error:', error));
+	        });
+	    </script>
 	</body>
 </html>
-
-</html>
-
-
 
 <%@ include file="../../common/foot.jsp" %>
