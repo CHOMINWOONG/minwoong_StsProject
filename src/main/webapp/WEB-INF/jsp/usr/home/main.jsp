@@ -27,11 +27,12 @@
 			<div class="flex justify-center flex-col items-center">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
 				<div class="flex space-x-4">
-					<a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href=""><span>체중 감량</span></a>
-					<a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl"  href=""><span>체중 유지</span></a>
-					<a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href=""><span>식습관 개선</span></a>
-					<a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href=""><span>체중 증량(근육량 증가)</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>체중 감량</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>체중 유지</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>식습관 개선</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>체중 증량(근육량 증가)</span></a>
 				</div>
+
 			</div>
 			<div>
 				<div class="text-3xl font-bold mt-20 mb-12">여러 운동 전문가들의 영상을 참고하세요 !</div>

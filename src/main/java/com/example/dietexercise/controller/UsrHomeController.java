@@ -10,4 +10,11 @@ public class UsrHomeController {
 	public String showMain() {
 		return "usr/home/main";
 	}
+	
+	@GetMapping("/")
+	public String showRoot() {
+		return "usr/home/main";
+	}
+	
+
 }

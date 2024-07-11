@@ -21,3 +21,10 @@ nav > div > div > a > img:hover {
 	border: 2px solid var(--linkbrary-primary-color, #000);
  	border-radius: 15px;  
 }
+
+/* 기초대사량 계산기 컨테이너를 화면 가운데로 정렬하기 위한 스타일 */
+.center-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
