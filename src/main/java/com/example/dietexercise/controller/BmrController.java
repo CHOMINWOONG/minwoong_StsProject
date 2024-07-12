@@ -1,25 +1,27 @@
 package com.example.dietexercise.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.dietexercise.bmrService.BmrService;
 import com.example.dietexercise.vo.BmrRequest;
 import com.example.dietexercise.vo.BmrResponse;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class BmrController {
+    @Autowired
+    private BmrService bmrService;
 
     @PostMapping("/calculateBmr")
     public BmrResponse calculateBmr(@RequestBody BmrRequest request) {
-        double bmr;
-
-        if ("남".equals(request.getGender())) {
-            bmr = 88.36 + (13.4 * request.getWeight()) + (4.8 * request.getHeight()) - (5.7 * request.getAge());
-        } else {
-            bmr = 447.6 + (9.2 * request.getWeight()) + (3.1 * request.getHeight()) - (4.3 * request.getAge());
-        }
-
-        return new BmrResponse(bmr);
+        double bmr = bmrService.calculateBmr(request.getGender(), request.getAge(), request.getWeight(), request.getHeight());
+        double tdee = bmrService.calculateTdee(bmr, request.getActivity());
+        return new BmrResponse(bmr, tdee);
     }
 }
+
+
+
 
 

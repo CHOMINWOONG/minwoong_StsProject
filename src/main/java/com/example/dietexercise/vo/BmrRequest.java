@@ -1,20 +1,22 @@
 package com.example.dietexercise.vo;
 
 public class BmrRequest {
-    private String gender;
+	private String gender;
     private int age;
     private double weight;
     private double height;
+    private double activity;
 
     // 기본 생성자
     public BmrRequest() {}
 
     // 생성자
-    public BmrRequest(String gender, int age, double weight, double height) {
+    public BmrRequest(String gender, int age, double weight, double height, double activity) {
         this.gender = gender;
         this.age = age;
         this.weight = weight;
         this.height = height;
+        this.activity = activity;
     }
 
     // getter와 setter
@@ -49,5 +51,10 @@ public class BmrRequest {
     public void setHeight(double height) {
         this.height = height;
     }
+
+	public double getActivity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
