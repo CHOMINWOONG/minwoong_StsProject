@@ -28,3 +28,11 @@ nav > div > div > a > img:hover {
 	justify-content: center;
 	align-items: center;
 }
+
+.con, .macro-table {
+	border: 2px solid #45c46d;
+}
+.macro-table {
+	border-radius: 10px;
+	padding: 30px;
+}

@@ -13,7 +13,7 @@
 </head>
 <body class="bg-gray-100">
     <div class="flex justify-center items-start min-h-screen p-6">
-        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="con bg-white p-8 rounded-lg shadow-md w-full max-w-md">
             <h1 class="text-2xl font-bold mb-10 text-center">기초대사량 계산기</h1>
             <form id="bmrForm" class="space-y-4">
                 <div class="flex justify-between items-center">
@@ -61,8 +61,38 @@
                 <p>체중 증량 목표 칼로리 : <strong id="weightGainLow"></strong> kcal ~ <strong id="weightGainHigh"></strong> kcal</p>
                 <p>(400~600 kcal 증가)</p>
             </div>
-        </div>
-    </div>
+         </div>
+         <!-- 탄수화물, 단백질, 지방 표 추가 -->
+			<div class="macro-table mt-20 ml-32 flex justify-center">
+				<div class="w-11/12 max-w-md"> <!-- 너비 제한 및 중앙 정렬 -->
+					<input type="number" id="finalCalories" placeholder="최종 칼로리를 입력해주세요" class="border border-green-500 rounded w-full p-2" required/>
+					<h3 class="mt-8 text-lg font-semibold text-center">영양소 분포</h3>
+					<table class="table-auto w-full mt-2">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="px-4 py-2">영양소</th>
+								<th class="px-4 py-2">g(그램)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="border px-4 py-2">탄수화물</td>
+								<td class="border px-4 py-2" id="carbsValue"></td>
+							</tr>
+							<tr>
+								<td class="border px-4 py-2">단백질</td>
+								<td class="border px-4 py-2" id="proteinValue"></td>
+							</tr>
+							<tr>
+								<td class="border px-4 py-2">지방</td>
+								<td class="border px-4 py-2" id="fatValue"></td>
+							</tr>
+						</tbody>
+					</table>
+				<button id="calculateMacros" class="mt-2 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">영양소 계산하기</button>
+				</div>
+			</div>
+	    </div>
     <script>
         document.getElementById('bmrForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -103,6 +133,31 @@
                 document.getElementById('result').classList.remove('hidden');
             })
             .catch(error => console.error('Error:', error));
+        });
+        
+        document.getElementById('calculateMacros').addEventListener('click', function() {
+            const finalCalories = parseFloat(document.getElementById('finalCalories').value);
+            
+            if (isNaN(finalCalories) || finalCalories <= 0) {
+                alert('유효한 칼로리를 입력해주세요.');
+                return;
+            }
+
+            // 영양소 비율
+            const carbsRatio = 0.5; // 탄수화물 50%
+            const proteinRatio = 0.3; // 단백질 30%
+            const fatRatio = 0.2; // 지방 20%
+
+            const carbs = (finalCalories * carbsRatio / 4).toFixed(2);  // 1g 당 4kcal
+            const protein = (finalCalories * proteinRatio / 4).toFixed(2); // 1g 당 4kcal
+            const fat = (finalCalories * fatRatio / 9).toFixed(2); // 1g 당 9kcal
+
+            document.getElementById('carbsValue').innerText = carbs;
+            document.getElementById('proteinValue').innerText = protein;
+            document.getElementById('fatValue').innerText = fat;
+
+            // 결과 영역 표시
+            document.getElementById('result').classList.remove('hidden');
         });
     </script>
 </body>
