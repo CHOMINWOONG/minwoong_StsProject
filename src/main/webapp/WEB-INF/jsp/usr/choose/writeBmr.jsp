@@ -61,6 +61,7 @@
                 <p>체중 증량 목표 칼로리 : <strong id="weightGainLow"></strong> kcal ~ <strong id="weightGainHigh"></strong> kcal</p>
                 <p>(400~600 kcal 증가)</p>
             </div>
+             
          </div>
          <!-- 탄수화물, 단백질, 지방 표 추가 -->
 			<div class="macro-table mt-20 ml-32 flex justify-center">
@@ -90,6 +91,10 @@
 						</tbody>
 					</table>
 				<button id="calculateMacros" class="mt-2 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">영양소 계산하기</button>
+				<!-- 주변 식단가게 찾아보기 버튼 추가 -->
+	            <div class="mt-6">
+	                <button id="findStoreButton" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">주변 식단가게 찾아보기</button>
+	            </div>
 				</div>
 			</div>
 	    </div>
@@ -159,11 +164,13 @@
             // 결과 영역 표시
             document.getElementById('result').classList.remove('hidden');
         });
+	     // 주변 식단가게 찾아보기 버튼 클릭 이벤트 추가
+	        document.getElementById('findStoreButton').addEventListener('click', function() {
+	            window.location.href = '/usr/choose/findStore'; // 이동할 실제 URL로 변경하세요.
+        });
     </script>
 </body>
 </html>
-
-
 
 
 <%@ include file="../../common/foot.jsp" %>

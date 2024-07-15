@@ -16,7 +16,7 @@ public class UsrChooseController {
     private BmrService bmrService;
 
     @GetMapping("/usr/choose/writeBmr")
-    public String showForm() {
+    public String writeBmr() {
         return "usr/choose/writeBmr";
     }
     
@@ -36,6 +36,19 @@ public class UsrChooseController {
         
         return "usr/choose/writeBmr";
     }
+    
+    @GetMapping("/usr/choose/findStore")
+    public String findStore() {
+        return "usr/choose/findStore";
+    }
+    
+    @PostMapping("/usr/choose/doFindStore")
+    public String doFindStore() {
+    	
+        return "usr/choose/findStore";
+    }
+    
+    
 }
 
 
