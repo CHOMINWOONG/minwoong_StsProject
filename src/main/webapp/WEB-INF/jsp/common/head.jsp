@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>${pageTitle }</title>
-<link rel="shortcut icon" href="/resource/imges/favicon.ico" />
 <!-- 데이지 UI, 테일윈드 -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.8/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -37,9 +36,11 @@
           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
       </svg>
     </a></li>
+			<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=1"><span>공지사항</span></a></li>
+			<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=2"><span>자유 게시판</span></a></li>
 			<c:if test="${rq.getLoginedMemberId() == 0 }">
-				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/join"><span>회원가입</span></a></li>
-				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/login"><span>로그인</span></a></li>
+				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/join"><span>회원가입</span></a></li>
+				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/login"><span>로그인</span></a></li>
 			</c:if>
 			<c:if test="${rq.getLoginedMemberId() != 0 }">
 				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/myPage"><span>마이페이지</span></a></li>
