@@ -87,14 +87,14 @@
             const placesList = document.getElementById('places');
             placesList.innerHTML = '';
 
-            places.forEach(function(place) {
+            places.slice(0, 5).forEach(function(place) {
                 const li = document.createElement('li');
                 const link = document.createElement('a');
                 link.href = '#';
                 link.textContent = place.name;
                 link.onclick = function() {
                     getPlaceDetails(place.place_id);
-                    return false;  // Prevent default link behavior
+                    return false;
                 };
                 li.appendChild(link);
                 placesList.appendChild(li);
@@ -151,6 +151,10 @@
             height: 80vh;
             width: 100%;
         }
+        #places li > a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body onload="initMap()" class="bg-gray-100">
@@ -161,9 +165,14 @@
                 <input id="searchKeyword" type="text" placeholder="검색어를 입력하세요" class="border border-gray-400 p-2 rounded-l-lg w-full max-w-md">
                 <button onclick="performSearch()" class="bg-blue-500 text-white p-2 rounded-r-lg">검색</button>
             </div>
-            <div id="map" class="rounded-lg border border-gray-300"></div>
-            <ul id="places" class="mt-4 list-disc pl-5"></ul>
-            <div id="place-details" class="mt-4"></div>
+            <div class="flex">
+                <div id="map" class="rounded-lg border border-gray-300 flex-grow"></div>
+                <div class="flex flex-col ml-4 w-1/3">
+                	<h2 class="text-xl font-bold mt-4 text-center">주변 가게정보</h2>
+                    <div id="places" class="mt-4 list-disc pl-5 border border-green-500  border-y-0 p-4 overflow-auto"></div>
+                    <div id="place-details" class="mt-4 p-4 border border-gray-300 rounded-md"></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
