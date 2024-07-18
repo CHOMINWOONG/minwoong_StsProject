@@ -47,3 +47,17 @@ nav > div > div > a > img:hover {
 	border-radius: 10px;
 	padding: 30px;
 }
+
+.day-cell {
+        display: inline-block;
+        width: calc(100% / 7 - 4px);
+        margin: 2px;
+}
+
+.modal {
+        display: none;
+}
+
+.modal.hidden {
+        display: none;
+}
