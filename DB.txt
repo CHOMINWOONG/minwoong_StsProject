@@ -18,14 +18,7 @@ CREATE TABLE `member`(
 );
 
 CREATE TABLE DietEntry (
-    DATE DATE PRIMARY KEY,
-    breakfast TEXT,
-    lunch TEXT,
-    dinner TEXT
-);
-
-CREATE TABLE DietEntry (
-    DATE DATE PRIMARY KEY
+    `date` VARCHAR(20) NOT NULL
     , breakfast VARCHAR(20) NOT NULL
     , lunch VARCHAR(20) NOT NULL
     , dinner VARCHAR(20) NOT NULL   
@@ -63,3 +56,4 @@ INSERT INTO `member`
         , email = 'user2@user2.com';
         
 SELECT * FROM `member`;
+SELECT * FROM DietEntry;

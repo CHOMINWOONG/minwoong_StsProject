@@ -3,9 +3,9 @@ package com.example.dietexercise.dao;
 import java.util.List;
 
 
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.example.dietexercise.vo.DietEntry;
@@ -26,9 +26,6 @@ public interface DietDao {
             SELECT *
                 FROM dietEntry
             """)
-    List<DietEntry> loadDiet(@Param("date") String date,
-                             @Param("breakfast") String breakfast,
-                             @Param("lunch") String lunch,
-                             @Param("dinner") String dinner);
+    List<DietEntry> loadDiet();
 }
 

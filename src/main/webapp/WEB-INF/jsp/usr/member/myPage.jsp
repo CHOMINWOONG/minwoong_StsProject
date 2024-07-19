@@ -137,6 +137,11 @@
 	              .then(data => {
 	                  if (data.success) {
 	                      alert('식단이 성공적으로 저장되었습니다.');
+	                      const dayCell = calendar.querySelector(`.day-cell[data-date='${date}']`);
+	                      if (dayCell) {
+	                          dayCell.classList.add('has-diet');
+	                          dayCell.title = `아침: ${breakfast}, 점심: ${lunch}, 저녁: ${dinner}`;
+	                      }
 	                  } else {
 	                      alert('식단 저장에 실패했습니다.');
 	                  }
@@ -146,9 +151,19 @@
 		fetch('/usr/diet/loadDiet')
 		            .then(response => response.json())
 		            .then(data => {
- 		                Object.keys(data).forEach(date => {
- 		                    dietEntries[date] = data[date];
- 		                });
+		            	 data.forEach(entry => {
+		                     const date = entry.date;
+		                     dietEntries[date] = {
+		                         breakfast: entry.breakfast,
+		                         lunch: entry.lunch,
+		                         dinner: entry.dinner
+		                     };
+		                     const dayCell = calendar.querySelector(`.day-cell[data-date='${date}']`);
+		                     if (dayCell) {
+		                         dayCell.classList.add('has-diet');
+		                         dayCell.title = `아침: ${entry.breakfast}, 점심: ${entry.lunch}, 저녁: ${entry.dinner}`;
+		                     }
+		                 });
  		            });
 		    });
 		</script>
@@ -170,4 +185,21 @@
 		    .modal:not(.hidden) {
 		        display: flex;
 		    }
+		    
+		    /* 달력 셀 css */
+		    .day-cell {
+			    transition: background-color 0.3s;
+			}
+			
+			.day-cell:hover {
+			    background-color: #f0f0f0;
+			}
+			
+			.has-diet {
+			    background-color: #e0f7fa;
+			}
+			
+			.has-diet:hover {
+			    background-color: #b2ebf2;
+			}
 		</style>

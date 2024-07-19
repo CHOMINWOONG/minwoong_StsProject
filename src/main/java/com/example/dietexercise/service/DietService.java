@@ -2,6 +2,7 @@ package com.example.dietexercise.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,8 @@ public class DietService {
         dietDao.saveDiet(date, breakfast, lunch, dinner);
     }
     
-    public List<DietEntry> loadDiet(String date, String breakfast, String lunch, String dinner) {
-        return dietDao.loadDiet(date, breakfast, lunch, dinner);
+    public List<DietEntry> loadDiet() {
+        return dietDao.loadDiet();
     }
 }
 

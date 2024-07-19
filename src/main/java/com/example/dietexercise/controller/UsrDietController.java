@@ -1,6 +1,7 @@
 package com.example.dietexercise.controller;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class UsrDietController {
     private DietService dietService;
 
     @GetMapping
-    public String showDietPage(Model model, String date, String breakfast, String lunch, String dinner) {
-        List<DietEntry> dietEntries = dietService.loadDiet(date, breakfast, lunch, dinner);
+    public String showDietPage(Model model) {
+        List<DietEntry> dietEntries = dietService.loadDiet();
         model.addAttribute("dietEntries", dietEntries);
         return "dietEntries"; 
     }
@@ -38,8 +39,8 @@ public class UsrDietController {
 
     @GetMapping("/loadDiet")
     @ResponseBody
-    public List<DietEntry> loadDiet(String date, String breakfast, String lunch, String dinner) {
-        return dietService.loadDiet(date, breakfast, lunch, dinner);
+    public List<DietEntry> loadDiet() {
+        return dietService.loadDiet();
     }
 }
 
