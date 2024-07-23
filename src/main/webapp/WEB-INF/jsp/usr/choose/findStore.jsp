@@ -110,12 +110,17 @@
             service.getDetails(request, function(place, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     const details = document.getElementById('place-details');
-                    details.innerHTML = `
-                        <h2>${place.name}</h2>
-                        <p>주소: ${place.formatted_address}</p>
-                        <p>전화번호: ${place.formatted_phone_number}</p>
-                        <p><a href="${place.website}" target="_blank">웹사이트 방문하기</a></p>
-                    `;
+                    let websiteHtml = '';
+                    if (place.website) {
+                        websiteHtml = '<p><a href="' + place.website + '" target="_blank">웹사이트 방문하기</a></p>'; // 수정된 부분: 문자열 연결 사용
+                    }
+
+                    // 수정된 부분: 문자열 연결을 통해 HTML을 동적으로 생성
+                    details.innerHTML = 
+                        '<h2>' + place.name + '</h2>' +
+                        '<p>주소: ' + place.formatted_address + '</p>' +
+                        '<p>전화번호: ' + (place.formatted_phone_number || '정보 없음') + '</p>' + // 수정된 부분: 전화번호가 없는 경우 '정보 없음' 표시
+                        websiteHtml; // 수정된 부분: 웹사이트 링크 추가
                 } else {
                     alert('가게 세부 정보를 가져올 수 없습니다.');
                 }

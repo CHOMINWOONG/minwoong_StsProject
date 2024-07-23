@@ -47,6 +47,7 @@ public class UsrDietController {
     }
     
     @PostMapping("/deleteDiet")
+    @ResponseBody
     public ResponseEntity<Map<String, Object>> deleteDiet(@RequestBody Map<String, Object> map) {
         Map<String, Object> response = new HashMap<>();
         try {

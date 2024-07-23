@@ -22,10 +22,9 @@ public class DietService {
         return dietDao.loadDiet();
     }
 
-	public void deleteDiet(String date, String breakfast, String lunch, String dinner) {
-		dietDao.deleteDiet(date, breakfast, lunch, dinner);
-		
-	}
+    public void deleteDiet(String date, String breakfast, String lunch, String dinner) {
+        dietDao.deleteDiet(date, breakfast, lunch, dinner);
+    }
 }
 
 
