@@ -131,14 +131,14 @@
             .then(data => {
                 const bmr = data.bmr;
                 const tdee = bmr * parseFloat(activity);
-
-                document.getElementById('bmrValue').innerText = bmr.toFixed(2);
-                document.getElementById('tdeeValue').innerText = tdee.toFixed(2);
-                document.getElementById('maintenance').innerText = tdee.toFixed(2);
-                document.getElementById('weightLossLow').innerText = (tdee - 500).toFixed(2);
-                document.getElementById('weightLossHigh').innerText = (tdee - 300).toFixed(2);
-                document.getElementById('weightGainLow').innerText = (tdee + 400).toFixed(2);
-                document.getElementById('weightGainHigh').innerText = (tdee + 600).toFixed(2);
+                
+                document.getElementById('bmrValue').innerText = bmr.toFixed(0);
+                document.getElementById('tdeeValue').innerText = tdee.toFixed(0);
+                document.getElementById('maintenance').innerText = tdee.toFixed(0);
+                document.getElementById('weightLossLow').innerText = (tdee - 500).toFixed(0);
+                document.getElementById('weightLossHigh').innerText = (tdee - 300).toFixed(0);
+                document.getElementById('weightGainLow').innerText = (tdee + 400).toFixed(0);
+                document.getElementById('weightGainHigh').innerText = (tdee + 600).toFixed(0);
                 document.getElementById('result').classList.remove('hidden');
             })
             .catch(error => console.error('Error:', error));
