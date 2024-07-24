@@ -48,6 +48,25 @@ public class UsrChooseController {
         return "usr/choose/findStore";
     }
     
+    @GetMapping("/usr/choose/exercisePlan")
+    public String exercisePlan() {
+    	return "usr/choose/exercisePlan";
+    }
+    
+    @GetMapping("/usr/exerciseByLevel/beginner")
+    public String beginner() {
+    	return "usr/exerciseByLevel/beginner";
+    }
+    
+    @GetMapping("/usr/exerciseByLevel/intermediate")
+    public String intermediate() {
+    	return "usr/exerciseByLevel/intermediate";
+    }
+    
+    @GetMapping("/usr/exerciseByLevel/advanced")
+    public String advanced() {
+    	return "usr/exerciseByLevel/advanced";
+    }
     
 }
 

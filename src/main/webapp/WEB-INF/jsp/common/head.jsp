@@ -45,6 +45,7 @@
 			</c:if>
 			<c:if test="${rq.getLoginedMemberId() != 0 }">
 				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/myPage"><span>마이페이지</span></a></li>
+				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/choose/exercisePlan"><span>운동 프로그램 세우기</span></a></li>
 				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/doLogout"><span>로그아웃</span></a></li>
 			</c:if>
 		</ul>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="CHOOSE WRITEBMR" />
@@ -8,96 +8,100 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>±âÃÊ´ë»ç·® °è»ê±â</title>
+    <title>ê¸°ì´ˆëŒ€ì‚¬ëŸ‰ ê³„ì‚°ê¸°</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
     <div class="flex justify-center items-start min-h-screen p-6">
         <div class="con bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-            <h1 class="text-2xl font-bold mb-10 text-center">±âÃÊ´ë»ç·® °è»ê±â</h1>
+            <h1 class="text-2xl font-bold mb-10 text-center">ê¸°ì´ˆëŒ€ì‚¬ëŸ‰ ê³„ì‚°ê¸°</h1>
             <form id="bmrForm" class="space-y-4">
                 <div class="flex justify-between items-center">
-                    <label for="gender" class="text-gray-700">¼ºº°:</label>
+                    <label for="gender" class="text-gray-700">ì„±ë³„:</label>
                     <select id="gender" name="gender" class="border border-green-500 rounded w-9/12 p-2" required>
-                        <option disabled selected>¼ºº°À» ¼±ÅÃÇØÁÖ¼¼¿ä</option>
-                        <option value="³²">³²</option>
-                        <option value="¿©">¿©</option>
+                        <option disabled selected>ì„±ë³„ì„ ì„ íƒí•´ì£¼ì„¸ìš”</option>
+                        <option value="ë‚¨">ë‚¨</option>
+                        <option value="ì—¬">ì—¬</option>
                     </select>
                 </div>
                 <div class="flex justify-between items-center">
-                    <label for="age" class="text-gray-700">³ªÀÌ:</label>
-                    <input type="number" id="age" name="age" placeholder="³ªÀÌ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" class="border border-green-500 rounded w-9/12 p-2" required/>
+                    <label for="age" class="text-gray-700">ë‚˜ì´:</label>
+                    <input type="number" id="age" name="age" placeholder="ë‚˜ì´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”" class="border border-green-500 rounded w-9/12 p-2" required/>
                 </div>
                 <div class="flex justify-between items-center">
-                    <label for="weight" class="text-gray-700">Ã¼Áß (kg):</label>
-                    <input type="number" id="weight" name="weight" step="0.1" placeholder="Ã¼ÁßÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä" class="border border-green-500 rounded w-9/12 p-2" required/>
+                    <label for="weight" class="text-gray-700">ì²´ì¤‘ (kg):</label>
+                    <input type="number" id="weight" name="weight" step="0.1" placeholder="ì²´ì¤‘ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”" class="border border-green-500 rounded w-9/12 p-2" required/>
                 </div>
                 <div class="flex justify-between items-center">
-                    <label for="height" class="text-gray-700">Å° (cm):</label>
-                    <input type="number" id="height" name="height" step="0.1" placeholder="Å°¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" class="border border-green-500 rounded w-9/12 p-2" required/>
+                    <label for="height" class="text-gray-700">í‚¤ (cm):</label>
+                    <input type="number" id="height" name="height" step="0.1" placeholder="í‚¤ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”" class="border border-green-500 rounded w-9/12 p-2" required/>
                 </div>
                 <div class="flex justify-between items-center">
-                    <label for="activity" class="text-gray-700">È°µ¿ ¼öÁØ:</label>
+                    <label for="activity" class="text-gray-700">í™œë™ ìˆ˜ì¤€:</label>
                     <select id="activity" name="activity" class="border border-green-500 rounded w-9/12 p-2" required>
-                        <option disabled selected>È°µ¿ ¼öÁØÀ» ¼±ÅÃÇØÁÖ¼¼¿ä</option>
-                        <option value="1.2">°ÅÀÇ ¿îµ¿ÇÏÁö ¾ÊÀ½</option>
-                        <option value="1.375">°¡º­¿î ¿îµ¿ (ÁÖ 1-3È¸)</option>
-                        <option value="1.55">Àû´çÇÑ ¿îµ¿ (ÁÖ 3-5È¸)</option>
-                        <option value="1.725">°í°­µµ ¿îµ¿ (ÁÖ 6-7È¸)</option>
-                        <option value="1.9">¸Å¿ì °í°­µµ ¿îµ¿ (ÇÏ·ç 2È¸ ÀÌ»ó)</option>
+                        <option disabled selected>í™œë™ ìˆ˜ì¤€ì„ ì„ íƒí•´ì£¼ì„¸ìš”</option>
+                        <option value="1.2">ê±°ì˜ ìš´ë™í•˜ì§€ ì•ŠìŒ</option>
+                        <option value="1.375">ê°€ë²¼ìš´ ìš´ë™ (ì£¼ 1-3íšŒ)</option>
+                        <option value="1.55">ì ë‹¹í•œ ìš´ë™ (ì£¼ 3-5íšŒ)</option>
+                        <option value="1.725">ê³ ê°•ë„ ìš´ë™ (ì£¼ 6-7íšŒ)</option>
+                        <option value="1.9">ë§¤ìš° ê³ ê°•ë„ ìš´ë™ (í•˜ë£¨ 2íšŒ ì´ìƒ)</option>
                     </select>
                 </div>
                 <div>
-                    <input type="submit" value="°è»êÇÏ±â" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                    <input type="submit" value="ê³„ì‚°í•˜ê¸°" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                 </div>
             </form>
+            
             <div id="result" class="mt-6 p-4 bg-green-100 rounded-lg text-center hidden">
-                <h2 class="text-xl font-bold mb-2">°á°ú</h2>
-                <p>±âÃÊ´ë»ç·®: <strong id="bmrValue"></strong> kcal</p>
-                <p>È°µ¿´ë»ç·®: <strong id="tdeeValue"></strong> kcal</p>
-                <p>Ã¼Áß À¯Áö: <strong id="maintenance"></strong> kcal</p>
-                <p>Ã¼Áß °¨·® ¸ñÇ¥ Ä®·Î¸® : <strong id="weightLossLow"></strong> kcal ~ <strong id="weightLossHigh"></strong> kcal</p>
-                <p>(300~500 kcal °¨¼Ò)</p>
-                <p>Ã¼Áß Áõ·® ¸ñÇ¥ Ä®·Î¸® : <strong id="weightGainLow"></strong> kcal ~ <strong id="weightGainHigh"></strong> kcal</p>
-                <p>(400~600 kcal Áõ°¡)</p>
+                <h2 class="text-xl font-bold mb-2">ê²°ê³¼</h2>
+                <p>ê¸°ì´ˆëŒ€ì‚¬ëŸ‰: <strong id="bmrValue"></strong> kcal</p>
+                <p>í™œë™ëŒ€ì‚¬ëŸ‰: <strong id="tdeeValue"></strong> kcal</p>
+                <p>ì²´ì¤‘ ìœ ì§€: <strong id="maintenance"></strong> kcal</p>
+                <p>ì²´ì¤‘ ê°ëŸ‰ ëª©í‘œ ì¹¼ë¡œë¦¬ : <strong id="weightLossLow"></strong> kcal ~ <strong id="weightLossHigh"></strong> kcal</p>
+                <p>(300~500 kcal ê°ì†Œ)</p>
+                <p>ì²´ì¤‘ ì¦ëŸ‰ ëª©í‘œ ì¹¼ë¡œë¦¬ : <strong id="weightGainLow"></strong> kcal ~ <strong id="weightGainHigh"></strong> kcal</p>
+                <p>(400~600 kcal ì¦ê°€)</p>
             </div>
-             
+             <div class="flex justify-center mb-8">
+	        	<button class="w-full max-w-md bg-gray-300 text-black py-2 rounded-lg hover:bg-gray-400 mt-8" onclick="history.back();">ë’¤ë¡œê°€ê¸°</button>
+	        </div>
          </div>
-         <!-- Åº¼öÈ­¹°, ´Ü¹éÁú, Áö¹æ Ç¥ Ãß°¡ -->
-			<div class="macro-table mt-20 ml-32 flex justify-center">
-				<div class="w-11/12 max-w-md"> <!-- ³Êºñ Á¦ÇÑ ¹× Áß¾Ó Á¤·Ä -->
-					<input type="number" id="finalCalories" placeholder="ÃÖÁ¾ Ä®·Î¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" class="border border-green-500 rounded w-full p-2" required/>
-					<h3 class="mt-8 text-lg font-semibold text-center">¿µ¾ç¼Ò ºÐÆ÷</h3>
+         <!-- íƒ„ìˆ˜í™”ë¬¼, ë‹¨ë°±ì§ˆ, ì§€ë°© í‘œ ì¶”ê°€ -->
+			<div class="macro-table ml-32 flex justify-center">
+				<div class="w-11/12 max-w-md"> <!-- ë„ˆë¹„ ì œí•œ ë° ì¤‘ì•™ ì •ë ¬ -->
+					<input type="number" id="finalCalories" placeholder="ìµœì¢… ì¹¼ë¡œë¦¬ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”" class="border border-green-500 rounded w-full p-2" required/>
+					<h3 class="mt-8 text-lg font-semibold text-center">ì˜ì–‘ì†Œ ë¶„í¬</h3>
 					<table class="table-auto w-full mt-2">
 						<thead>
 							<tr class="bg-gray-200">
-								<th class="px-4 py-2">¿µ¾ç¼Ò</th>
-								<th class="px-4 py-2">g(±×·¥)</th>
+								<th class="px-4 py-2">ì˜ì–‘ì†Œ</th>
+								<th class="px-4 py-2">g(ê·¸ëž¨)</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="border px-4 py-2">Åº¼öÈ­¹°</td>
+								<td class="border px-4 py-2">íƒ„ìˆ˜í™”ë¬¼</td>
 								<td class="border px-4 py-2" id="carbsValue"></td>
 							</tr>
 							<tr>
-								<td class="border px-4 py-2">´Ü¹éÁú</td>
+								<td class="border px-4 py-2">ë‹¨ë°±ì§ˆ</td>
 								<td class="border px-4 py-2" id="proteinValue"></td>
 							</tr>
 							<tr>
-								<td class="border px-4 py-2">Áö¹æ</td>
+								<td class="border px-4 py-2">ì§€ë°©</td>
 								<td class="border px-4 py-2" id="fatValue"></td>
 							</tr>
 						</tbody>
 					</table>
-				<button id="calculateMacros" class="mt-2 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">¿µ¾ç¼Ò °è»êÇÏ±â</button>
-				<!-- ÁÖº¯ ½Ä´Ü°¡°Ô Ã£¾Æº¸±â ¹öÆ° Ãß°¡ -->
+				<button id="calculateMacros" class="mt-2 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">ì˜ì–‘ì†Œ ê³„ì‚°í•˜ê¸°</button>
+				<!-- ì£¼ë³€ ì‹ë‹¨ê°€ê²Œ ì°¾ì•„ë³´ê¸° ë²„íŠ¼ ì¶”ê°€ -->
 	            <div class="mt-6">
-	                <button id="findStoreButton" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">ÁÖº¯ ½Ä´Ü°¡°Ô Ã£¾Æº¸±â</button>
+	                <button id="findStoreButton" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">ì£¼ë³€ ì‹ë‹¨ê°€ê²Œ ì°¾ì•„ë³´ê¸°</button>
 	            </div>
 				</div>
 			</div>
 	    </div>
+	    
     <script>
         document.getElementById('bmrForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -144,29 +148,29 @@
             const finalCalories = parseFloat(document.getElementById('finalCalories').value);
             
             if (isNaN(finalCalories) || finalCalories <= 0) {
-                alert('À¯È¿ÇÑ Ä®·Î¸®¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.');
+                alert('ìœ íš¨í•œ ì¹¼ë¡œë¦¬ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.');
                 return;
             }
 
-            // ¿µ¾ç¼Ò ºñÀ²
-            const carbsRatio = 0.5; // Åº¼öÈ­¹° 50%
-            const proteinRatio = 0.3; // ´Ü¹éÁú 30%
-            const fatRatio = 0.2; // Áö¹æ 20%
+            // ì˜ì–‘ì†Œ ë¹„ìœ¨
+            const carbsRatio = 0.5; // íƒ„ìˆ˜í™”ë¬¼ 50%
+            const proteinRatio = 0.3; // ë‹¨ë°±ì§ˆ 30%
+            const fatRatio = 0.2; // ì§€ë°© 20%
 
-            const carbs = (finalCalories * carbsRatio / 4).toFixed(2);  // 1g ´ç 4kcal
-            const protein = (finalCalories * proteinRatio / 4).toFixed(2); // 1g ´ç 4kcal
-            const fat = (finalCalories * fatRatio / 9).toFixed(2); // 1g ´ç 9kcal
+            const carbs = (finalCalories * carbsRatio / 4).toFixed(2);  // 1g ë‹¹ 4kcal
+            const protein = (finalCalories * proteinRatio / 4).toFixed(2); // 1g ë‹¹ 4kcal
+            const fat = (finalCalories * fatRatio / 9).toFixed(2); // 1g ë‹¹ 9kcal
 
             document.getElementById('carbsValue').innerText = carbs;
             document.getElementById('proteinValue').innerText = protein;
             document.getElementById('fatValue').innerText = fat;
 
-            // °á°ú ¿µ¿ª Ç¥½Ã
+            // ê²°ê³¼ ì˜ì—­ í‘œì‹œ
             document.getElementById('result').classList.remove('hidden');
         });
-	     // ÁÖº¯ ½Ä´Ü°¡°Ô Ã£¾Æº¸±â ¹öÆ° Å¬¸¯ ÀÌº¥Æ® Ãß°¡
+	     // ì£¼ë³€ ì‹ë‹¨ê°€ê²Œ ì°¾ì•„ë³´ê¸° ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ ì¶”ê°€
 	        document.getElementById('findStoreButton').addEventListener('click', function() {
-	            window.location.href = '/usr/choose/findStore'; // ÀÌµ¿ÇÒ ½ÇÁ¦ URL·Î º¯°æÇÏ¼¼¿ä.
+	            window.location.href = '/usr/choose/findStore';
         });
     </script>
 </body>

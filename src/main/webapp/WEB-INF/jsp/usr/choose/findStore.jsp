@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="pageTitle" value="CHOOSE FINDSTORE" />
@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÁÖº¯ »ø·¯µå °¡°Ô Ã£±â</title>
+    <title>ì£¼ë³€ ìƒëŸ¬ë“œ ê°€ê²Œ ì°¾ê¸°</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPAEOD6-8zx3BZEqZffoi7oyp8eePQuaM&libraries=places"></script>
     <script>
         let map;
@@ -25,13 +25,13 @@
                         lng: position.coords.longitude
                     };
 
-                    // Google Maps ÃÊ±âÈ­
+                    // Google Maps ì´ˆê¸°í™”
                     map = new google.maps.Map(document.getElementById('map'), {
                         center: userLocation,
                         zoom: 15
                     });
 
-                    // »ç¿ëÀÚÀÇ À§Ä¡¿¡ ¸¶Ä¿ Ç¥½Ã
+                    // ì‚¬ìš©ìì˜ ìœ„ì¹˜ì— ë§ˆì»¤ í‘œì‹œ
                     const marker = new google.maps.Marker({
                         position: userLocation,
                         map: map,
@@ -41,13 +41,13 @@
                     service = new google.maps.places.PlacesService(map);
                     infowindow = new google.maps.InfoWindow();
 
-                    // ÁÖº¯ »ø·¯µå °¡°Ô °Ë»ö
+                    // ì£¼ë³€ ìƒëŸ¬ë“œ ê°€ê²Œ ê²€ìƒ‰
                     searchNearby(userLocation);
                 }, function() {
-                    alert('À§Ä¡ Á¤º¸¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.');
+                    alert('ìœ„ì¹˜ ì •ë³´ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');
                 });
             } else {
-                alert('ÀÌ ºê¶ó¿ìÀú´Â À§Ä¡ Á¤º¸¸¦ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.');
+                alert('ì´ ë¸Œë¼ìš°ì €ëŠ” ìœ„ì¹˜ ì •ë³´ë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.');
             }
         }
 
@@ -56,7 +56,7 @@
                 location: location,
                 radius: '5000',
                 type: ['restaurant'],
-                keyword: '»ø·¯µå'
+                keyword: 'ìƒëŸ¬ë“œ'
             };
 
             service.nearbySearch(request, function(results, status) {
@@ -66,7 +66,7 @@
                         createMarker(results[i]);
                     }
                 } else {
-                    alert('ÁÖº¯ »ø·¯µå °¡°Ô¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.');
+                    alert('ì£¼ë³€ ìƒëŸ¬ë“œ ê°€ê²Œë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');
                 }
             });
         }
@@ -112,17 +112,17 @@
                     const details = document.getElementById('place-details');
                     let websiteHtml = '';
                     if (place.website) {
-                        websiteHtml = '<p><a href="' + place.website + '" target="_blank">À¥»çÀÌÆ® ¹æ¹®ÇÏ±â</a></p>'; // ¼öÁ¤µÈ ºÎºĞ: ¹®ÀÚ¿­ ¿¬°á »ç¿ë
+                        websiteHtml = '<p><a href="' + place.website + '" target="_blank">ì›¹ì‚¬ì´íŠ¸ ë°©ë¬¸í•˜ê¸°</a></p>'; // ìˆ˜ì •ëœ ë¶€ë¶„: ë¬¸ìì—´ ì—°ê²° ì‚¬ìš©
                     }
 
-                    // ¼öÁ¤µÈ ºÎºĞ: ¹®ÀÚ¿­ ¿¬°áÀ» ÅëÇØ HTMLÀ» µ¿ÀûÀ¸·Î »ı¼º
+                    // ìˆ˜ì •ëœ ë¶€ë¶„: ë¬¸ìì—´ ì—°ê²°ì„ í†µí•´ HTMLì„ ë™ì ìœ¼ë¡œ ìƒì„±
                     details.innerHTML = 
                         '<h2>' + place.name + '</h2>' +
-                        '<p>ÁÖ¼Ò: ' + place.formatted_address + '</p>' +
-                        '<p>ÀüÈ­¹øÈ£: ' + (place.formatted_phone_number || 'Á¤º¸ ¾øÀ½') + '</p>' + // ¼öÁ¤µÈ ºÎºĞ: ÀüÈ­¹øÈ£°¡ ¾ø´Â °æ¿ì 'Á¤º¸ ¾øÀ½' Ç¥½Ã
-                        websiteHtml; // ¼öÁ¤µÈ ºÎºĞ: À¥»çÀÌÆ® ¸µÅ© Ãß°¡
+                        '<p>ì£¼ì†Œ: ' + place.formatted_address + '</p>' +
+                        '<p>ì „í™”ë²ˆí˜¸: ' + (place.formatted_phone_number || 'ì •ë³´ ì—†ìŒ') + '</p>' + // ìˆ˜ì •ëœ ë¶€ë¶„: ì „í™”ë²ˆí˜¸ê°€ ì—†ëŠ” ê²½ìš° 'ì •ë³´ ì—†ìŒ' í‘œì‹œ
+                        websiteHtml; // ìˆ˜ì •ëœ ë¶€ë¶„: ì›¹ì‚¬ì´íŠ¸ ë§í¬ ì¶”ê°€
                 } else {
-                    alert('°¡°Ô ¼¼ºÎ Á¤º¸¸¦ °¡Á®¿Ã ¼ö ¾ø½À´Ï´Ù.');
+                    alert('ê°€ê²Œ ì„¸ë¶€ ì •ë³´ë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.');
                 }
             });
         }
@@ -145,7 +145,7 @@
                             createMarker(results[i]);
                         }
                     } else {
-                        alert('°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.');
+                        alert('ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.');
                     }
                 });
             }
@@ -165,20 +165,28 @@
 <body onload="initMap()" class="bg-gray-100">
     <div class="flex justify-center items-center min-h-screen p-6">
         <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md">
-            <h1 class="text-2xl font-bold mb-6 text-center">ÁÖº¯ »ø·¯µå °¡°Ô Ã£±â</h1>
+            <h1 class="text-2xl font-bold mb-6 text-center">ì£¼ë³€ ìƒëŸ¬ë“œ ê°€ê²Œ ì°¾ê¸°</h1>
             <div class="flex justify-center mb-4">
-                <input id="searchKeyword" type="text" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä" class="border border-gray-400 p-2 rounded-l-lg w-full max-w-md">
-                <button onclick="performSearch()" class="bg-blue-500 text-white p-2 rounded-r-lg">°Ë»ö</button>
+                <input id="searchKeyword" type="text" placeholder="ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”" class="border border-gray-400 p-2 rounded-l-lg w-full max-w-md">
+                <button onclick="performSearch()" class="bg-blue-500 text-white p-2 rounded-r-lg">ê²€ìƒ‰</button>
             </div>
             <div class="flex">
                 <div id="map" class="rounded-lg border border-gray-300 flex-grow"></div>
                 <div class="flex flex-col ml-4 w-1/3">
-                	<h2 class="text-xl font-bold mt-4 text-center">ÁÖº¯ °¡°ÔÁ¤º¸</h2>
+                	<h2 class="text-xl font-bold mt-4 text-center">ì£¼ë³€ ê°€ê²Œì •ë³´</h2>
                     <div id="places" class="mt-4 list-disc pl-5 border border-green-500  border-y-0 p-4 overflow-auto"></div>
-                    <div id="place-details" class="mt-4 p-4 border border-gray-300 rounded-md"></div>
+                    <div id="place-details" class="mt-4 mb-4 p-4 border border-gray-300 rounded-md"></div>
+                    <button id="exercisePlanButton" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">ìš´ë™ í”„ë¡œê·¸ë¨ ì„¸ìš°ê¸°</button>
                 </div>
             </div>
+            <button class="btn btn-active btn-sm mt-4" onclick="history.back();">ë’¤ë¡œê°€ê¸°</button>
         </div>
     </div>
+    <script>
+		 // ì£¼ë³€ ì‹ë‹¨ê°€ê²Œ ì°¾ì•„ë³´ê¸° ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ ì¶”ê°€
+		document.getElementById('exercisePlanButton').addEventListener('click', function() {
+			window.location.href = '/usr/choose/exercisePlan';
+		});
+    </script>
 </body>
 </html>
