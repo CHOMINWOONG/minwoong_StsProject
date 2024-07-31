@@ -37,13 +37,13 @@
                     <td class="py-2 px-4 border">가슴 & 삼두</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">벤치프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">인클라인 벤치프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 플라이</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">케이블 크로스오버</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">트라이셉 딥스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">트라이셉 푸쉬다운</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">벤치프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">인클라인 벤치프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 플라이</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">케이블 크로스오버</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">트라이셉 딥스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">트라이셉 푸쉬다운</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -125,7 +125,7 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal fade" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
                             <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">사이드 레터럴 레이즈</a></li>
                             <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">프론트 레이즈</a></li>
                             <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">벤트 오버 레이즈</a></li>
@@ -162,8 +162,10 @@
         <button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
     </div>
     
+    <!-- 모달 백드롭 -->
+    <div class="modal-backdrop-custom"></div>
     <!-- 모달 창 -->
-    <div class="modal fade" id="exerciseModal" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
+    <div class="modal-custom" id="exerciseModal" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -185,6 +187,7 @@
             </div>
         </div>
     </div>
+
     
     <script>
         $(document).ready(function() {
@@ -209,7 +212,7 @@
             $('#searchExercise').on('keyup', function() {
                 var query = $(this).val().toLowerCase();
                 $.ajax({
-                    url: 'searchExercise.jsp',
+                    url: '/searchExercise', // 서블릿 경로
                     method: 'GET',
                     data: { query: query },
                     success: function(data) {
