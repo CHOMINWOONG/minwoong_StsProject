@@ -35,13 +35,13 @@
                     <td class="py-2 px-4 border">월요일</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">스쿼트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">푸쉬업</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">바벨 컬</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">싯업</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">스쿼트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">푸쉬업</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">바벨 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">싯업</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -65,13 +65,13 @@
                     <td class="py-2 px-4 border">수요일</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">스쿼트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">체스트 프레스 머신</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">바이셉 컬</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">플랭크</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">스쿼트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">체스트 프레스 머신</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">바이셉 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">플랭크</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -95,13 +95,13 @@
                     <td class="py-2 px-4 border">금요일</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">스쿼트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 체스트 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">바벨 컬</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">싯업</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">스쿼트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 체스트 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">바벨 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">트라이셉 익스텐션</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">싯업</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -132,8 +132,10 @@
 		<button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
     </div>
     
+    <!-- 모달 백드롭 -->
+    <div class="modal-backdrop-custom"></div>
     <!-- 모달 창 -->
-    <div class="modal fade" id="exerciseModal" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
+    <div class="modal-custom" id="exerciseModal" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

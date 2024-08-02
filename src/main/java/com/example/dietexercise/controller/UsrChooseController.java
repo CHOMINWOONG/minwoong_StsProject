@@ -1,14 +1,25 @@
 package com.example.dietexercise.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate; // RestTemplate import 추가
+
 
 import com.example.dietexercise.bmrService.BmrService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class UsrChooseController {
@@ -68,7 +79,31 @@ public class UsrChooseController {
     public String advanced() {
     	return "usr/exerciseByLevel/advanced";
     }
+    @GetMapping("/usr/exerciseByLevel/getSearchExercise")
+    public String getSearchExercise() {
+    	return "usr/exerciseByLevel/getSearchExercise";
+    }
     
+    @PostMapping("/usr/exerciseByLevel/searchExercise")
+    @ResponseBody
+    public void doSearchExercise(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String query = request.getParameter("query").toLowerCase();
+        String apiUrl = "https://wger.de/api/v2/exercise/?language=2&status=2&name=" + query;
+
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Accept", "application/json");
+
+        ResponseEntity<String> apiResponse = restTemplate.exchange(apiUrl, HttpMethod.GET, null, String.class);
+        if (apiResponse.getStatusCode() == HttpStatus.OK) {
+            String jsonResponse = apiResponse.getBody();
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(jsonResponse);
+        } else {
+            response.sendError(HttpStatus.BAD_REQUEST.value(), "API 호출 실패");
+        }
+    }
 }
 
 

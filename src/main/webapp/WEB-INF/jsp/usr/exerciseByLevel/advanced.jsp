@@ -62,13 +62,13 @@
                     <td class="py-2 px-4 border">등 & 이두</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">풀업</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">바벨 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">시티드 로우</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">바이셉 컬</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">해머 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">풀업</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">바벨 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">시티드 로우</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">바이셉 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">해머 컬</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -93,13 +93,13 @@
                     <td class="py-2 px-4 border">하체</td>
                     <td class="py-2 px-4 border">
                         <ul class="list-disc ml-4">
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">스쿼트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">데드리프트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">레그 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">핵 스쿼트</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">레그 익스텐션</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">레그 컬</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">카프 레이즈</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">스쿼트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">데드리프트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">레그 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">핵 스쿼트</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">레그 익스텐션</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">레그 컬</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">카프 레이즈</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -125,12 +125,12 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal fade" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">사이드 레터럴 레이즈</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">프론트 레이즈</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">벤트 오버 레이즈</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">싯업</a></li>
-                            <li><a href="#" class="exercise-item" data-toggle="modal" data-target="#exerciseModal">헹잉 레그레이즈</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">덤벨 숄더 프레스</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">사이드 레터럴 레이즈</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">프론트 레이즈</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">벤트 오버 레이즈</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">싯업</a></li>
+                            <li><a href="#" class="exercise-item" data-toggle="modal-custom" data-target="#exerciseModal">헹잉 레그레이즈</a></li>
                         </ul>
                     </td>
                     <td class="py-2 px-4 border">
@@ -190,47 +190,54 @@
 
     
     <script>
-        $(document).ready(function() {
-            var selectedExerciseItem;
+    
+    $(document).ready(function() {
+        var selectedExerciseItem;
 
-            // 운동 종목을 클릭했을 때 모달 창을 띄우는 이벤트 핸들러
-            $('.exercise-item').on('click', function() {
-                selectedExerciseItem = $(this);
-                $('#exerciseModal').modal('show');
-            });
+        // 운동 종목을 클릭했을 때 모달 창을 띄우는 이벤트 핸들러
+        $('.exercise-item').on('click', function() {
+            selectedExerciseItem = $(this);
+            $('#exerciseModal').modal('show');
+        });
 
-            // 모달 창에서 저장 버튼을 클릭했을 때 선택된 운동 종목을 업데이트하는 이벤트 핸들러
-            $('#saveExercise').on('click', function() {
-                var selectedExercise = $('#exerciseList .list-group-item.active').text();
-                if (selectedExercise) {
-                    selectedExerciseItem.text(selectedExercise);
-                    $('#exerciseModal').modal('hide');
+        // 모달 창에서 저장 버튼을 클릭했을 때 선택된 운동 종목을 업데이트하는 이벤트 핸들러
+        $('#saveExercise').on('click', function() {
+            var selectedExercise = $('#exerciseList .list-group-item.active').text();
+            if (selectedExercise) {
+                selectedExerciseItem.text(selectedExercise);
+                $('#exerciseModal').modal('hide');
+            }
+        });
+
+        // 검색 입력 필드에서 키가 눌렸을 때 운동 종목을 검색하는 이벤트 핸들러
+        $('#searchExercise').on('keyup', function() {
+            var query = $(this).val().toLowerCase(); // 입력된 검색어를 소문자로 변환
+            $.ajax({
+                url: '/usr/exerciseByLevel/searchExercise', // 서버의 엔드포인트로 AJAX 요청
+                method: 'POST', // POST 요청 사용
+                data: { query: query }, // 요청 데이터로 검색어 전달
+                success: function(data) {
+                    var exercises = JSON.parse(data).results.map(item => item.name); // 응답 데이터에서 운동 종목 이름 추출
+                    $('#exerciseList').empty(); // 기존 검색 결과 지우기
+                    exercises.forEach(function(exercise) { // 각 운동 종목을 리스트에 추가
+                        $('#exerciseList').append('<li class="list-group-item">' + exercise + '</li>');
+                    });
+
+                    // 검색 결과 항목을 클릭했을 때 활성화 상태를 변경하는 이벤트 핸들러
+                    $('.list-group-item').on('click', function() {
+                        $('.list-group-item').removeClass('active');
+                        $(this).addClass('active');
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error); // 오류 발생 시 콘솔에 출력
+                    $('#exerciseList').append('<li class="list-group-item text-danger">검색 중 오류가 발생했습니다.</li>'); // 오류 메시지 표시
                 }
             });
-
-            // 검색 입력 필드에서 키가 눌렸을 때 운동 종목을 검색하는 이벤트 핸들러
-            $('#searchExercise').on('keyup', function() {
-                var query = $(this).val().toLowerCase();
-                $.ajax({
-                    url: '/searchExercise', // 서블릿 경로
-                    method: 'GET',
-                    data: { query: query },
-                    success: function(data) {
-                        var exercises = JSON.parse(data);
-                        $('#exerciseList').empty();
-                        exercises.forEach(function(exercise) {
-                            $('#exerciseList').append('<li class="list-group-item">' + exercise + '</li>');
-                        });
-
-                        // 검색 결과 항목을 클릭했을 때 활성화 상태를 변경하는 이벤트 핸들러
-                        $('.list-group-item').on('click', function() {
-                            $('.list-group-item').removeClass('active');
-                            $(this).addClass('active');
-                        });
-                    }
-                });
-            });
         });
+    });
+
+
     </script>
     
 </body>
