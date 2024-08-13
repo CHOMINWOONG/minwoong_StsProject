@@ -194,7 +194,43 @@
                 $('#exerciseModal').modal('show');
             });
 
+         // ExerciseDB API를 이용하여 운동 종목을 검색
+            $('#searchExercise').on('input', function() {
+                var query = $(this).val();
+                if (query.length > 2) { // 최소 3글자 입력 후 검색
+                    $.ajax({
+                        url: 'https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0',
+                        method: 'GET',
+                        headers: {
+                            'X-RapidAPI-Key': '327aaf4813msh9771b90d28a29e8p1cb6bcjsnafaa397398e5', // 여기에 자신의 RapidAPI 키를 입력
+                            'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+                        },
+                        
+                        success: function(response) {
+                            console.log(response); // 전체 응답을 확인
+                            
+                            // 예시: response가 객체고 exercises라는 배열 속성이 있는 경우
+                            if (Array.isArray(response.exercises)) {
+                                response.exercises.forEach(function(exercise) {
+                                    $('#exerciseList').append('<li class="list-group-item">' + exercise.name + '</li>');
+                                });
+                            } else {
+                                console.error('응답 데이터에서 exercises 배열을 찾을 수 없습니다:', response);
+                            }
+                        },
+                        error: function(error) {
+                            console.error('API 호출 실패:', error);
+                        }
+                    });
+                }
+            });
+         
             // 모달 창에서 저장 버튼을 클릭했을 때 선택된 운동 종목을 업데이트하는 이벤트 핸들러
+            $('#exerciseList').on('click', '.list-group-item', function() {
+                $('.list-group-item').removeClass('active');
+                $(this).addClass('active');
+            });
+
             $('#saveExercise').on('click', function() {
                 var selectedExercise = $('#exerciseList .list-group-item.active').text();
                 if (selectedExercise) {
@@ -203,28 +239,7 @@
                 }
             });
 
-            // 검색 입력 필드에서 키가 눌렸을 때 운동 종목을 검색하는 이벤트 핸들러
-            $('#searchExercise').on('keyup', function() {
-                var query = $(this).val().toLowerCase();
-                $.ajax({
-                    url: 'searchExercise.jsp',
-                    method: 'GET',
-                    data: { query: query },
-                    success: function(data) {
-                        var exercises = JSON.parse(data);
-                        $('#exerciseList').empty();
-                        exercises.forEach(function(exercise) {
-                            $('#exerciseList').append('<li class="list-group-item">' + exercise + '</li>');
-                        });
-
-                        // 검색 결과 항목을 클릭했을 때 활성화 상태를 변경하는 이벤트 핸들러
-                        $('.list-group-item').on('click', function() {
-                            $('.list-group-item').removeClass('active');
-                            $(this).addClass('active');
-                        });
-                    }
-                });
-            });
+            
         });
     </script>
 </body>
