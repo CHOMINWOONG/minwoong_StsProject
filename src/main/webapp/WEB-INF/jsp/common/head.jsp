@@ -20,7 +20,7 @@
 </head>
 <body class="bg-white">
 
-	<div class="bg-green-300 text-center py-3 text-xl font-bold z-50 relative">
+	<div class="bg-green-300 text-center py-3 text-xl font-bold z-50 relative text-white">
 	    다이어트 시작이 반이다!
 	</div>
 	

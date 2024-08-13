@@ -33,7 +33,7 @@
 				    </a>
 				</div>
 			</div>	
-			<button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
+			<button class="btn btn-active btn-sm fixed bottom-16 left-16" onclick="history.back();">뒤로가기</button>
 		</div>
 	</section>
 </body>
