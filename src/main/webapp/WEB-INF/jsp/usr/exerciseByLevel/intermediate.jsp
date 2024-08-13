@@ -156,6 +156,7 @@
         </table>
         <p class="mt-4">이 루틴을 일주일에 4회 반복하세요. 수요일과 주말은 휴식 또는 가벼운 유산소 운동을 추천합니다.</p>
         <button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
+        <button class="btn btn-active btn-sm" onclick="history.back();">저장</button>
     </div>
 
     <!-- 모달 백드롭 -->

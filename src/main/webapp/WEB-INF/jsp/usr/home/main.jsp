@@ -6,10 +6,14 @@
 <c:set var="pageTitle" value="운동식단 만들기"/>
 
 <%@ include file="../../common/head.jsp" %>
+ <!-- Chart.js 라이브러리 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap CSS (선택 사항) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<section class="mt-8">
 		<div class="container mx-auto text-black">
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
-			<div class="flex justify-center flex-col items-center">
+			<div class="flex justify-center flex-col items-center mb-20">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
 				<div class="flex space-x-4">
 				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>체중 감량</span></a>
@@ -18,6 +22,14 @@
 				</div>
 
 			</div>
+			
+			<div class="container mx-auto p-4">
+		        <h1 class="text-2xl font-bold text-center mb-6">대한민국 비만율 통계</h1>
+		        <div class="relative h-96">
+		            <canvas id="obesityChart" class="w-full h-full"></canvas>
+		        </div>
+		    </div>
+		    
 			<div>
 				<div class="text-3xl font-bold mt-20 mb-12">여러 운동 전문가들의 영상을 참고하세요 !</div>
 				
@@ -47,5 +59,60 @@
 			</div>	
 		</div>
 	</section>
+	
+	<script>
+        // 그래프 데이터
+        const data = {
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020'], // 연도 또는 기간
+            datasets: [{
+                label: '비만율 (%)',
+                data: [30.0, 31.2, 32.5, 33.1, 34.0, 35.2], // 예시 데이터
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        };
 
+        // 그래프 옵션
+        const options = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += context.parsed.y + '%';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            }
+        };
+
+        // Chart.js를 이용한 그래프 생성
+        const ctx = document.getElementById('obesityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line', // 그래프 타입 (선 그래프)
+            data: data,
+            options: options
+        });
+    </script>
  <%@ include file="../../common/foot.jsp" %>
