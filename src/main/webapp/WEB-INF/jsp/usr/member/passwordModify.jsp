@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="pageTitle" value="PASSWORD MODIFY" />
+<c:set var="pageTitle" value="비밀번호 수정" />
 
 <%@ include file="../../common/head.jsp" %>
 

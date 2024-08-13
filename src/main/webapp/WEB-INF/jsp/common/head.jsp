@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>${pageTitle }</title>
-<link rel="shortcut icon" href="/resource/imges/favicon.ico" />
+<link rel="shortcut icon" href="/resource/imges/favicon.ico"/>
 <!-- 데이지 UI, 테일윈드 -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.8/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +18,12 @@
 <link rel="stylesheet" href="/resource/common.css" />
 <!-- <script src="/resource/common.js" defer="defer"></script> -->
 </head>
-<body>
+<body class="bg-white">
+
+	<div class="bg-green-300 text-center py-3 text-xl font-bold z-50 relative">
+	    다이어트 시작이 반이다!
+	</div>
+	
 	<div class="h-20 flex container mx-auto text-3xl">
 		<div><a class="h-full px-3 flex items-center w-32 h-32" href="/"><img src="https://media.istockphoto.com/id/1340648234/ko/%EB%B2%A1%ED%84%B0/%EC%86%90-%EA%B0%95%ED%95%9C-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%B2%A1%ED%84%B0-%EC%95%84%EC%9D%B4%EC%BD%98.jpg?s=612x612&w=0&k=20&c=k7ZFwdWkSHfnM0eaKZlFgy9CrRfF2A8_dwLv9cs3yA4=" alt="" /></a></div>
 		<div class="grow"></div>
@@ -37,16 +42,16 @@
           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
       </svg>
     </a></li>
-			<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=1"><span>공지사항</span></a></li>
-			<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=2"><span>자유 게시판</span></a></li>
+			<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=1"><span>공지사항</span></a></li>
+			<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/article/list?boardId=2"><span>자유 게시판</span></a></li>
 			<c:if test="${rq.getLoginedMemberId() == 0 }">
-				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/join"><span>회원가입</span></a></li>
-				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/login"><span>로그인</span></a></li>
+				<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/join"><span>회원가입</span></a></li>
+				<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/login"><span>로그인</span></a></li>
 			</c:if>
 			<c:if test="${rq.getLoginedMemberId() != 0 }">
-				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/myPage"><span>마이페이지</span></a></li>
-				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/choose/exercisePlan"><span>운동 프로그램 세우기</span></a></li>
-				<li class="hover:underline"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/doLogout"><span>로그아웃</span></a></li>
+				<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/myPage"><span>마이페이지</span></a></li>
+				<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/choose/exercisePlan"><span>운동 프로그램 세우기</span></a></li>
+				<li class="hover:underline text-green-600"><a class="h-full px-3 flex items-center text-sm" href="/usr/member/doLogout"><span>로그아웃</span></a></li>
 			</c:if>
 		</ul>
 		<label class="flex cursor-pointer gap-2">

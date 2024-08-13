@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <section class="mt-8">
+    <section class="mt-8 h-screen text-black">
 		<div class="container mx-auto">
 			<div class="flex justify-center flex-col items-center">
 				<div class="text-4xl font-bold mb-12">자신의 레벨을 선택해주세요</div>
@@ -36,8 +36,5 @@
 			<button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
 		</div>
 	</section>
-    <script>
-		
-    </script>
 </body>
 </html>

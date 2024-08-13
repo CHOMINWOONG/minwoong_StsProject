@@ -3,11 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
-<c:set var="pageTitle" value="MAIN"/>
+<c:set var="pageTitle" value="운동식단 만들기"/>
 
 <%@ include file="../../common/head.jsp" %>
 	<section class="mt-8">
-		<div class="container mx-auto">
+		<div class="container mx-auto text-black">
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
 			<div class="flex justify-center flex-col items-center">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
