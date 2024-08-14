@@ -132,3 +132,11 @@ nav>div>div>a>img:hover {
 	width: 400px;
 	height: 400px;
 }
+
+
+/* main.jsp 스크롤 css 설정 */
+section > div {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+

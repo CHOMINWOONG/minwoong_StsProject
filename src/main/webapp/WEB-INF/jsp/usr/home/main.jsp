@@ -13,7 +13,7 @@
 	<section class="mt-8">
 		<div class="container mx-auto text-black">
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
-			<div class="flex justify-center flex-col items-center mb-20">
+			<div class="flex justify-center flex-col items-center mb-20 h-svh">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
 				<div class="flex space-x-4">
 				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded text-black text-xl no-underline hover:bg-gray-300 rounded-2xl" href="/usr/choose/writeBmr"><span>체중 감량</span></a>
@@ -23,14 +23,14 @@
 
 			</div>
 			
-			<div class="container mx-auto p-4">
+			<div class="container mx-auto p-4 h-svh">
 		        <h1 class="text-2xl font-bold text-center mb-6">대한민국 비만율 통계</h1>
 		        <div class="relative h-96">
 		            <canvas id="obesityChart" class="w-full h-full"></canvas>
 		        </div>
 		    </div>
 		    
-			<div>
+			<div class="h-svh">
 				<div class="text-3xl font-bold mt-20 mb-12">여러 운동 전문가들의 영상을 참고하세요 !</div>
 				
 				<nav>
@@ -114,5 +114,25 @@
             data: data,
             options: options
         });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const divs = document.querySelectorAll('section > div');
+            
+            function handleScroll() {
+                divs.forEach(div => {
+                    const rect = div.getBoundingClientRect();
+                    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                    if (rect.top <= windowHeight && rect.bottom >= 0) {
+                        div.style.opacity = 1;
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // 페이지 로드시 요소들이 이미 화면에 있는지 확인
+        });
+
+
     </script>
  <%@ include file="../../common/foot.jsp" %>
