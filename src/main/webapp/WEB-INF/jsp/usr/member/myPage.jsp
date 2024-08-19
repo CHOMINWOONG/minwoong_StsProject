@@ -15,8 +15,8 @@
 	            <button id="dietButton" class="btn btn-active btn-sm">식단기록</button>
 	        </div>
 	        
-	        <div class="flex flex-col md:flex-row">
-	            <div class="w-full md:w-1/2">
+	        <div id="infoSection" class="flex justify-center items-center">
+	            <div class="w-full md:w-1/2 max-w-lg">
 	                <div class="table-box-type">
 	                    <table class="table table-lg border border-green-500">
 	                        <tr>
@@ -54,37 +54,41 @@
 	                    </table>
 	                </div>
 	            </div>
-	            <div class="w-full md:w-1/2 mt-4 md:mt-0 md:ml-4">
+	        </div>
+	            
+	        
+	        <div id="dietSection" class="hidden flex justify-center items-center">
+	        
+	        	<div class="w-full md:w-1/2 max-w-lg mt-4 md:mt-0 md:ml-4">
+	        	<h1 class="block text-center mb-4">날짜별 식단 기록 캘린더</h1>
 	                <div id="calendar" class="border border-green-500 p-4 rounded-lg grid grid-cols-7 gap-2"></div>
 	            </div>
-	        </div>
-	        
-	        <div id="dietModal" class="hidden fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
-	            <div class="bg-white p-5 rounded-lg shadow-lg w-1/3">
-	                <div class="modal-header flex justify-between items-center mb-4">
-	                    <h2 class="text-xl">식단 기록</h2>
-	                    <button class="modal-close text-red-500">&times;</button>
-	                </div>
-	                <div class="modal-body mb-4">
-	                    <input type="hidden" id="dietDate" />
-	                    <label for="breakfastContent">아침:</label>
-	                    <textarea id="breakfastContent" class="w-full mt-2 border rounded p-2"></textarea>
-	                    <label for="lunchContent">점심:</label>
-	                    <textarea id="lunchContent" class="w-full mt-2 border rounded p-2"></textarea>
-	                    <label for="dinnerContent">저녁:</label>
-	                    <textarea id="dinnerContent" class="w-full mt-2 border rounded p-2"></textarea>
-	                </div>
-	                <div class="flex justify-end">
-		                <div class="modal-footer text-right mr-4">
-		                    <button class="btn btn-primary" onclick="deleteDiet()">모두 지우기</button>
+		        <div id="dietModal" class="hidden fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
+		            <div class="bg-white p-5 rounded-lg shadow-lg w-1/3">
+		                <div class="modal-header flex justify-between items-center mb-4">
+		                    <h2 class="text-xl">식단 기록</h2>
+		                    <button class="modal-close text-red-500">&times;</button>
 		                </div>
-		                <div class="modal-footer text-right">
-		                    <button class="btn btn-primary" onclick="saveDiet()">저장</button>
+		                <div class="modal-body mb-4">
+		                    <input type="hidden" id="dietDate" />
+		                    <label for="breakfastContent">아침:</label>
+		                    <textarea id="breakfastContent" class="w-full mt-2 border rounded p-2"></textarea>
+		                    <label for="lunchContent">점심:</label>
+		                    <textarea id="lunchContent" class="w-full mt-2 border rounded p-2"></textarea>
+		                    <label for="dinnerContent">저녁:</label>
+		                    <textarea id="dinnerContent" class="w-full mt-2 border rounded p-2"></textarea>
 		                </div>
-	                </div>
-	            </div>
-	        </div>
-	
+		                <div class="flex justify-end">
+			                <div class="modal-footer text-right mr-4">
+			                    <button class="btn btn-primary" onclick="deleteDiet()">모두 지우기</button>
+			                </div>
+			                <div class="modal-footer text-right">
+			                    <button class="btn btn-primary" onclick="saveDiet()">저장</button>
+			                </div>
+		                </div>
+		            </div>
+		        </div>
+			</div>
 	        <div class="mt-3 flex justify-between">
 	            <button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
 	            <a class="btn btn-active btn-sm" href="checkPassword?loginId=${member.loginId }">회원정보수정</a>
@@ -96,6 +100,22 @@
 
 	<script>
     document.addEventListener('DOMContentLoaded', function() {
+    	
+    	 const infoButton = document.getElementById('infoButton');
+         const dietButton = document.getElementById('dietButton');
+         const infoSection = document.getElementById('infoSection');
+         const dietSection = document.getElementById('dietSection');
+
+         infoButton.addEventListener('click', function() {
+             infoSection.classList.remove('hidden');
+             dietSection.classList.add('hidden');
+         });
+
+         dietButton.addEventListener('click', function() {
+             dietSection.classList.remove('hidden');
+             infoSection.classList.add('hidden');
+         });
+         
         const calendar = document.getElementById('calendar');
         const modal = document.getElementById('dietModal');
         const modalClose = document.querySelector('.modal-close');
