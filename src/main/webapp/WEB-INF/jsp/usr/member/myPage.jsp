@@ -5,7 +5,16 @@
 <c:set var="pageTitle" value="마이페이지" />
 
 <%@ include file="../../common/head.jsp" %>
+<!-- 캘린더 셀 스타일링 -->
+<style>
+    #calendar > div {
+        @apply flex items-center justify-center bg-teal-100 rounded-lg transition-colors duration-300 ease-in-out text-lg font-bold text-teal-700 aspect-square;
+    }
 
+    #calendar > div:hover {
+        @apply bg-teal-200;
+    }
+</style>
 	<section class="mt-8 text-lg">
 	    <div class="container mx-auto px-3 pb-8">
 	    
@@ -60,30 +69,30 @@
 	        <div id="dietSection" class="hidden flex justify-center items-center">
 	        
 	        	<div class="w-full md:w-1/2 max-w-lg mt-4 md:mt-0 md:ml-4">
-	        	<h1 class="block text-center mb-4">날짜별 식단 기록 캘린더</h1>
-	                <div id="calendar" class="border border-green-500 p-4 rounded-lg grid grid-cols-7 gap-2"></div>
+	        	<h1 class="block text-center mb-4 text-teal-800 mb-6">날짜별 식단 기록 캘린더</h1>
+	                <div id="calendar" class="border border-teal-500 rounded-lg grid grid-cols-7 gap-2 p-4 bg-gray-50 aspect-square"></div>
 	            </div>
-		        <div id="dietModal" class="hidden fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
+		        <div id="dietModal" class="hidden fixed z-10 inset-0 overflow-y-auto flex items-center justify-center bg-black bg-opacity-50">
 		            <div class="bg-white p-5 rounded-lg shadow-lg w-1/3">
 		                <div class="modal-header flex justify-between items-center mb-4">
-		                    <h2 class="text-xl">식단 기록</h2>
+		                    <h2 class="text-xl text-teal-700">식단 기록</h2>
 		                    <button class="modal-close text-red-500">&times;</button>
 		                </div>
 		                <div class="modal-body mb-4">
 		                    <input type="hidden" id="dietDate" />
-		                    <label for="breakfastContent">아침:</label>
+		                    <label for="breakfastContent" class="text-teal-800">아침:</label>
 		                    <textarea id="breakfastContent" class="w-full mt-2 border rounded p-2"></textarea>
-		                    <label for="lunchContent">점심:</label>
+		                    <label for="lunchContent" class="text-teal-800">점심:</label>
 		                    <textarea id="lunchContent" class="w-full mt-2 border rounded p-2"></textarea>
-		                    <label for="dinnerContent">저녁:</label>
+		                    <label for="dinnerContent" class="text-teal-800">저녁:</label>
 		                    <textarea id="dinnerContent" class="w-full mt-2 border rounded p-2"></textarea>
 		                </div>
 		                <div class="flex justify-end">
 			                <div class="modal-footer text-right mr-4">
-			                    <button class="btn btn-primary" onclick="deleteDiet()">모두 지우기</button>
+			                    <button class="btn btn-primary bg-teal-700 hover:bg-teal-900 text-white rounded px-4 py-2 mr-4" onclick="deleteDiet()">모두 지우기</button>
 			                </div>
 			                <div class="modal-footer text-right">
-			                    <button class="btn btn-primary" onclick="saveDiet()">저장</button>
+			                    <button class="btn btn-primary bg-teal-700 hover:bg-teal-900 text-white rounded px-4 py-2" onclick="saveDiet()">저장</button>
 			                </div>
 		                </div>
 		            </div>
