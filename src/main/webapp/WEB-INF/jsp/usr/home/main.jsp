@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap CSS (선택 사항) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<section class="mt-8">
+	<section class="main mt-8">
 		<div class="container mx-auto text-black">
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
 			<div class="flex justify-center flex-col items-center mb-20 h-svh">
@@ -24,6 +24,8 @@
 			</div>
 			
 			<div class="container mx-auto p-4 h-svh">
+				<h1 class="text-4xl font-bold text-center mb-6">심각해지는 대한민국의 비만율</h1>
+				<br />
 		        <h1 class="text-2xl font-bold text-center mb-6">대한민국 비만율 통계</h1>
 		        <div class="relative h-96">
 		            <canvas id="obesityChart" class="w-full h-full"></canvas>

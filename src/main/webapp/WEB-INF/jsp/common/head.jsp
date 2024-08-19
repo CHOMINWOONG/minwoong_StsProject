@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html class="bg-white">
 <head>
 <meta charset="UTF-8">
 <title>${pageTitle }</title>
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/resource/common.css" />
 <!-- <script src="/resource/common.js" defer="defer"></script> -->
 </head>
-<body class="bg-white">
+<body>
 
 	<div class="bg-green-300 text-center py-3 text-xl font-bold z-50 relative text-white">
 	    다이어트 시작이 반이다!

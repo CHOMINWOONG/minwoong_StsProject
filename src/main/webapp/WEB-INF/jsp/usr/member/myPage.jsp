@@ -8,6 +8,13 @@
 
 	<section class="mt-8 text-lg">
 	    <div class="container mx-auto px-3 pb-8">
+	    
+	    	<!-- 메뉴 바 -->
+	        <div class="flex justify-center mb-4">
+	            <button id="infoButton" class="btn btn-active btn-sm mr-2">회원정보</button>
+	            <button id="dietButton" class="btn btn-active btn-sm">식단기록</button>
+	        </div>
+	        
 	        <div class="flex flex-col md:flex-row">
 	            <div class="w-full md:w-1/2">
 	                <div class="table-box-type">
@@ -215,38 +222,3 @@
     });
 </script>
 		
-		<style>
-		    .day-cell {
-		        display: flex;
-		        align-items: center;
-		        justify-content: center;
-		        height: 100px;
-		        width: 100%;
-		        cursor: pointer;
-		    }
-		
-		    .modal {
-		        display: none;
-		    }
-		
-		    .modal:not(.hidden) {
-		        display: flex;
-		    }
-		    
-		    /* 달력 셀 css */
-		    .day-cell {
-			    transition: background-color 0.3s;
-			}
-			
-			.day-cell:hover {
-			    background-color: #f0f0f0;
-			}
-			
-			.has-diet {
-			    background-color: #e0f7fa;
-			}
-			
-			.has-diet:hover {
-			    background-color: #b2ebf2;
-			}
-		</style>
