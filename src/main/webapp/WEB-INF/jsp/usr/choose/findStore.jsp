@@ -162,7 +162,7 @@
         }
     </style>
 </head>
-<body onload="initMap()" class="bg-gray-100">
+<body onload="initMap()" class="bg-white">
     <div class="flex justify-center items-center min-h-screen p-6">
         <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-md">
             <h1 class="text-2xl font-bold mb-6 text-center">주변 샐러드 가게 찾기</h1>

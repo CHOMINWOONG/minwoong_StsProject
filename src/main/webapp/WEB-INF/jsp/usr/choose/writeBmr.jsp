@@ -11,7 +11,7 @@
     <title>기초대사량 계산기</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-white">
     <div class="flex justify-center items-start min-h-screen p-6">
         <div class="con bg-white p-8 rounded-lg shadow-md w-full max-w-md">
             <h1 class="text-2xl font-bold mb-10 text-center">기초대사량 계산기</h1>
