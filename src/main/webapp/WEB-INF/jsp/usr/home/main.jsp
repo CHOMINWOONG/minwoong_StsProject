@@ -10,8 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap CSS (선택 사항) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<section class="main mt-8">
-		<div class="container mx-auto text-black">
+    <div class="container mx-auto text-black">
+		<section class="main mt-8">
+		
 			<div>조민웅의 운동영양 프로젝트 사이트 </div>
 			<div class="flex justify-center flex-col items-center mb-20 h-svh">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
@@ -20,9 +21,9 @@
 				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-gray-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 유지</span></a>
 				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-gray-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 증량(근육량 증가)</span></a>
 				</div>
-
 			</div>
-			
+		</section>
+		<section class="main mt-8">		
 			<div class="container mx-auto p-4 h-svh">
 				<h1 class="text-4xl font-bold text-center mb-6">심각해지는 대한민국의 비만율</h1>
 				<br />
@@ -31,8 +32,8 @@
 		            <canvas id="obesityChart" class="w-full h-full"></canvas>
 		        </div>
 		    </div>
-		    
-			<div class="h-svh">
+		</section>	    
+		<section class="main mt-8">
 				<div class="text-3xl font-bold mt-20 mb-12">여러 운동 전문가들의 영상을 참고하세요 !</div>
 				
 				<nav>
@@ -58,9 +59,8 @@
 				        </div>
 				    </div>
 				</nav>
-			</div>	
+			</section>	
 		</div>
-	</section>
 	
 	<script>
         // 그래프 데이터
