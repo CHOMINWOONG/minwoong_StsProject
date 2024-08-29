@@ -95,9 +95,14 @@
 					</table>
 				<button id="calculateMacros" class="mt-2 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">영양소 계산하기</button>
 				<!-- 주변 식단가게 찾아보기 버튼 추가 -->
-	            <div class="mt-6">
-	                <button id="findStoreButton" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">주변 식단가게 찾아보기</button>
-	            </div>
+	            <c:if test="${not empty sessionScope.user}">
+				    <!-- 로그인된 사용자 -->
+				    <button id="findStoreButton" class="...">...</button>
+				</c:if>
+				<c:if test="${empty sessionScope.user}">
+				    <!-- 로그인되지 않은 사용자 -->
+				    <button id="loginButton" class="...">...</button>
+				</c:if>
 				</div>
 			</div>
 	    </div>
@@ -172,6 +177,28 @@
 	        document.getElementById('findStoreButton').addEventListener('click', function() {
 	            window.location.href = '/usr/choose/findStore';
         });
+	     
+	        <script>
+	        document.addEventListener('DOMContentLoaded', (event) => {
+	            const findStoreButton = document.getElementById('findStoreButton');
+	            const loginButton = document.getElementById('loginButton');
+
+	            if (findStoreButton) {
+	                findStoreButton.addEventListener('click', function() {
+	                    // 로그인된 사용자를 위한 행동 (예: 주변 가게 찾기 페이지로 이동)
+	                    window.location.href = '/findStores';
+	                });
+	            }
+
+	            if (loginButton) {
+	                loginButton.addEventListener('click', function() {
+	                    // 로그인되지 않은 사용자를 위한 행동 (예: 로그인 페이지로 이동)
+	                    window.location.href = '/login';
+	                });
+	            }
+	        });
+	        </script>
+
     </script>
 </body>
 </html>
