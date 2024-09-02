@@ -2,58 +2,181 @@ DROP DATABASE IF EXISTS SB_AM;
 CREATE DATABASE SB_AM;
 USE SB_AM;
 
-CREATE TABLE `member`(
-    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
-    , regDate DATETIME NOT NULL
-    , updateDate DATETIME NOT NULL
-    , loginId VARCHAR(20) NOT NULL
-    , loginPw VARCHAR(100) NOT NULL
-    , `name` VARCHAR(20) NOT NULL
-    , nickname VARCHAR(20) NOT NULL
-    , cellphoneNum VARCHAR(20) NOT NULL
-    , email VARCHAR(50) NOT NULL
-    , authLevel INT UNSIGNED NOT NULL DEFAULT 2 COMMENT '권한 레벨 (일반 = 2, 관리자 = 1)'
-    , delStatus INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (탈퇴 전 = 0, 탈퇴 후 = 1)'
-    , delDate DATETIME COMMENT '탈퇴 날짜'
-);
-
-CREATE TABLE dietEntry (
-    `date` VARCHAR(20) NOT NULL
-    , breakfast VARCHAR(20) NOT NULL
-    , lunch VARCHAR(20) NOT NULL
-    , dinner VARCHAR(20) NOT NULL   
-);
-
-INSERT INTO `member`
-    SET regDate = NOW()
-        , updateDate = NOW()
-        , loginId = 'admin'
-        , loginPw = 'admin'
-        , `name` = '관리자'
-        , nickname = 'admin'
-        , cellphoneNum = '010-0000-0000'
-        , email = 'admin@admin.com'
-        , authLevel = 1;
-
-INSERT INTO `member`
-    SET regDate = NOW()
-        , updateDate = NOW()
-        , loginId = 'user1'
-        , loginPw = 'user1'
-        , `name` = '유저1'
-        , nickname = 'user1'
-        , cellphoneNum = '010-1111-1111'
-        , email = 'user1@user1.com';
-        
-INSERT INTO `member`
-    SET regDate = NOW()
-        , updateDate = NOW()
-        , loginId = 'user2'
-        , loginPw = 'user2'
-        , `name` = '유저2'
-        , nickname = 'user2'
-        , cellphoneNum = '010-2222-2222'
-        , email = 'user2@user2.com';
-        
-SELECT * FROM `member`;
-SELECT * FROM dietEntry;
+		CREATE TABLE article(
+		    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+		    , regDate DATETIME NOT NULL
+		    , updateDate DATETIME NOT NULL
+		    , memberId INT UNSIGNED NOT NULL
+		    , boardId INT UNSIGNED NOT NULL
+		    , title VARCHAR(100) NOT NULL
+		    , `body` TEXT NOT NULL
+		);
+		
+		ALTER TABLE article ADD COLUMN views INT UNSIGNED NOT NULL DEFAULT 0;
+		
+		CREATE TABLE `member`(
+		    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+		    , regDate DATETIME NOT NULL
+		    , updateDate DATETIME NOT NULL
+		    , loginId VARCHAR(20) NOT NULL
+		    , loginPw VARCHAR(100) NOT NULL
+		    , `name` VARCHAR(20) NOT NULL
+		    , nickname VARCHAR(20) NOT NULL
+		    , cellphoneNum VARCHAR(20) NOT NULL
+		    , email VARCHAR(50) NOT NULL
+		    , authLevel INT UNSIGNED NOT NULL DEFAULT 2 COMMENT '권한 레벨 (일반 = 2, 관리자 = 1)'
+		    , delStatus INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (탈퇴 전 = 0, 탈퇴 후 = 1)'
+		    , delDate DATETIME COMMENT '탈퇴 날짜'
+		);
+		
+		CREATE TABLE board(
+		    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+		    , `name` VARCHAR(20) NOT NULL COMMENT '게시판 이름'
+		);
+		
+		CREATE TABLE likePoint(
+		    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+		    , memberId INT UNSIGNED NOT NULL
+		    , relTypeCode VARCHAR(20) NOT NULL COMMENT '관련 데이터 타입 코드'
+		    , relId INT UNSIGNED NOT NULL COMMENT '관련 데이터 번호'
+		    , `point` INT NOT NULL DEFAULT 1
+		);
+		
+		CREATE TABLE reply(
+		    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+		    , regDate DATETIME NOT NULL
+		    , updateDate DATETIME NOT NULL
+		    , memberId INT UNSIGNED NOT NULL
+		    , relTypeCode VARCHAR(20) NOT NULL
+		    , relId INT UNSIGNED NOT NULL
+		    , `body` TEXT NOT NULL
+		);
+		
+		
+		INSERT INTO article
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , memberId = 1
+		        , boardId = 1
+		        , title = CONCAT('제목_', RAND())
+		        , `body` = CONCAT('내용_', RAND());
+		        
+		INSERT INTO `member`
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , loginId = 'admin'
+		        , loginPw = 'admin'
+		        , `name` = '관리자'
+		        , nickname = 'admin'
+		        , cellphoneNum = '010-0000-0000'
+		        , email = 'admin@admin.com'
+		        , authLevel = 1;
+		
+		INSERT INTO `member`
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , loginId = 'user1'
+		        , loginPw = 'user1'
+		        , `name` = '유저1'
+		        , nickname = 'user1'
+		        , cellphoneNum = '010-1111-1111'
+		        , email = 'user1@user1.com';
+		
+		INSERT INTO `member`
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , loginId = 'user2'
+		        , loginPw = 'user2'
+		        , `name` = '유저2'
+		        , nickname = 'user2'
+		        , cellphoneNum = '010-2222-2222'
+		        , email = 'user2@user2.com';
+		
+		INSERT INTO board
+		    SET `name` = '공지사항';
+		INSERT INTO board
+		    SET `name` = '자유';
+		
+		# 2번 회원이 2번 게시물에 좋아요
+		INSERT INTO likePoint
+		    SET memberId = 2
+		        , relTypeCode = 'article'
+		        , relId = 2;
+		
+		# 2번 회원이 3번 게시물에 좋아요
+		INSERT INTO likePoint
+		    SET memberId = 2
+		        , relTypeCode = 'article'
+		        , relId = 3;
+		
+		# 3번 회원이 1번 게시물에 좋아요
+		INSERT INTO likePoint
+		    SET memberId = 3
+		        , relTypeCode = 'article'
+		        , relId = 1;
+		
+		# 3번 회원이 3번 게시물에 좋아요
+		INSERT INTO likePoint
+		    SET memberId = 3
+		        , relTypeCode = 'article'
+		        , relId = 3;
+		
+		# 2번 회원이 1번 글에 댓글
+		INSERT INTO reply
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , memberId = 2
+		        , relTypeCode = 'article'
+		        , relId = 1
+		        , `body` = '댓글1';
+		
+		# 3번 회원이 1번 글에 댓글
+		INSERT INTO reply
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , memberId = 3
+		        , relTypeCode = 'article'
+		        , relId = 1
+		        , `body` = '댓글2';
+		
+		# 2번 회원이 3번 글에 댓글
+		INSERT INTO reply
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , memberId = 2
+		        , relTypeCode = 'article'
+		        , relId = 3
+		        , `body` = '댓글3';
+		
+		# 3번 회원이 2번 글에 댓글
+		INSERT INTO reply
+		    SET regDate = NOW()
+		        , updateDate = NOW()
+		        , memberId = 3
+		        , relTypeCode = 'article'
+		        , relId = 2
+		        , `body` = '댓글4';
+		
+		SELECT * FROM article;
+		SELECT * FROM `member`;
+		SELECT * FROM board;
+		SELECT * FROM likePoint;
+		SELECT * FROM reply;
+		
+		TRUNCATE article;
+		TRUNCATE `member`;
+		TRUNCATE board;
+		TRUNCATE likePoint;
+		TRUNCATE reply;
+		
+		INSERT INTO article
+		(
+		    regDate, updateDate, memberId, boardId, title, `body`
+		)
+		SELECT NOW()
+		     , NOW()
+		     , FLOOR(RAND() * 3) + 1
+		     , FLOOR(RAND() * 2) + 1
+		     , CONCAT('제목_', FLOOR(RAND() * 10000))
+		     , CONCAT('내용_', FLOOR(RAND() * 10000))
+		    FROM article;
