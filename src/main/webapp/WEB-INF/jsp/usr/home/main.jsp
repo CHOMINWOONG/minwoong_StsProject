@@ -17,9 +17,9 @@
 			<div class="flex justify-center flex-col items-center mb-20 h-svh">
 				<div class="text-4xl font-bold mb-12">본인의 맞는 목표를 선택하세요 !</div>
 				<div class="flex space-x-4">
-				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-gray-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 감량</span></a>
-				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-gray-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 유지</span></a>
-				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-gray-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 증량(근육량 증가)</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-green-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 감량</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-green-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 유지</span></a>
+				    <a class="flex justify-center items-center w-52 h-20 bg-gray-200 rounded-xl text-black text-xl no-underline hover:bg-green-300 hover:font-bold" href="/usr/choose/writeBmr"><span>체중 증량(근육량 증가)</span></a>
 				</div>
 			</div>
 		</section>
